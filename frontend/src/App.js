@@ -1,13 +1,13 @@
+import React from "react";
 import "./App.css";
-import { Link } from "react-router-dom";
+import NavBar from "./Components/Navbar/NavBar";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <h1>Study Link</h1>
-      <Link to="/login">
-        <button>Go to login page(temporary)</button>
-      </Link>
+      <NavBar />
+      <Dashboard />
     </div>
   );
 }

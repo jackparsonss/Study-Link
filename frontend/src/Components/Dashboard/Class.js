@@ -1,7 +1,11 @@
 import React from "react";
 
-function Class() {
-  return <div>Class</div>;
+function Class({ timeLeft, classTitle }) {
+  return (
+    <div>
+      {timeLeft} hr left in {classTitle}
+    </div>
+  );
 }
 
 export default Class;

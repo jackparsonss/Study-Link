@@ -1,7 +1,7 @@
 import React from "react";
 
-function Person() {
-  return <div>Person</div>;
+function Person({ name, profilePicture }) {
+  return <div>Hello {name}</div>;
 }
 
 export default Person;
