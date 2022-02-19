@@ -12,7 +12,7 @@ const useForm = () => {
 
     const handleChange = e => {
         const{name,value} = e.target;
-        setValues=({
+        setValues({
             ...values,
             [name]: value
 

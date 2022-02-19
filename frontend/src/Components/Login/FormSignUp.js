@@ -3,6 +3,7 @@ import useForm from './useForm';
 
 const FormSignUp = () => {
   const {handleChange,values} = useForm();
+  
   return (
     <div className= "form-content-right">
         <form className="form">
@@ -18,7 +19,7 @@ const FormSignUp = () => {
                     classname="form-input" 
                     placeholder= "Enter your username"
                     value = {values.username}
-                    onChange={()=>handleChange}
+                    onChange={handleChange}
                     />
             </div>
 
