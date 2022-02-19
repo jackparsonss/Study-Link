@@ -10,8 +10,16 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" elements={<App />} />
-        <Route path="/login" elements={<Login />} />
+        <Route path="/" element={<App />} />
+        <Route path="login" element={<Login />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
