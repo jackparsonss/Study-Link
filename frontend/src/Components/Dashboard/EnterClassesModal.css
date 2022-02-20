@@ -1,0 +1,101 @@
+.enterClassesModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.enterClassesModal__content {
+  width: 500px;
+}
+
+.enterClassesModal__header,
+.enterClassesModal__footer {
+  padding: 10px;
+}
+
+.enterClassesModal__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.modalbtn {
+  padding: 0 50px;
+}
+
+.enterClassesModal__title {
+  margin: 0;
+}
+
+.enterClassesModal-content-right {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.enterClassesModal-label {
+  margin-right: 15px;
+  padding-right: 15px;
+}
+
+.enterClassesModal-inputs {
+  margin-bottom: 15px;
+}
+
+.enterClassesModal-title {
+  font-size: 48px;
+  padding-bottom: 15px;
+}
+
+.enterClassesModal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  border: 2px solid #abafba;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 25px;
+  background-color: #484848;
+}
+
+.enterClassesModal-input {
+  background: none;
+  border: none;
+  font-size: 25px;
+}
+
+.enterClassesModal-input-btn {
+  background-color: #5e7af2;
+  width: 25%;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  margin-top: 20px;
+  color: white;
+  height: 5vh;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+.enterClassesModal-input-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.enterClassesModal-inputs {
+  background: none;
+  border: none;
+  font-size: 25px;
+}
