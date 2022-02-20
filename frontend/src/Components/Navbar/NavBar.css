@@ -1,4 +1,104 @@
-.nav {
-  height: 15vh;
+
+
+/* li,a{
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+} */
+
+.nav{
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
   border-bottom: 1px solid #abafba;
+  background-color: #484848;
+  padding: 30px;
+  width: 100%; 
+
 }
+p{
+  color: white;
+}
+
+p:hover{
+    border-bottom: 3px solid #5E7AF2;
+    color: #5E7AF2  
+  }
+
+.NavItem{
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+  
+  }
+
+
+.Home{
+  display: flex;
+  flex-direction: row;
+  padding-right: 200px;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.NavIcon{
+  padding-right: 5px;
+  color: white;
+
+}
+
+
+
+
+/* 
+.Classes{
+  display: flex;
+  flex-direction: row;
+  padding-left: 100px;
+}
+
+.Chat{
+  display: flex;
+  flex-direction: row;
+  padding-left: 100px;
+}
+
+.Settings{
+  display: flex;
+  flex-direction: row;
+  padding-left: 100px;
+} */
+
+
+
+
+
+
+
+/* .studylinks{
+  color: white;
+  margin-right: 500px;
+
+}
+
+.nav__links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a{
+  font-family: "Ubuntu", monospace;
+  font-size: 30px;
+
+  transition: all 0.3s ease 0s
+}
+
+.nav__links li a:hover{
+  border-bottom: 2px solid #5E7AF2;
+  color: #5E7AF2 */
+/* } */
+
+
+
