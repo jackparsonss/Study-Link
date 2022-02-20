@@ -4,8 +4,14 @@ import { FaHome } from "react-icons/fa";
 import { HiChat } from "react-icons/hi";
 import { FiSettings } from "react-icons/fi";
 import { GiNotebook } from "react-icons/gi";
+import { auth } from "../../firebase";
+import { signOut } from "firebase/auth";
 
 function NavBar() {
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
+
   return (
     <div className="nav">
       <div className="NavItem Home">
@@ -23,7 +29,7 @@ function NavBar() {
         <p>Chat</p>
       </div>
 
-      <div className="NavItem">
+      <div className="NavItem" onClick={handleLogout}>
         <FiSettings className="NavIcon" />
         <p>Settings</p>
       </div>

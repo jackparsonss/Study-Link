@@ -104,7 +104,7 @@ const Login = () => {
             Login
           </button>
           <div className="form-input-login">
-            Need to signed? Sign up <Link to="/login">here</Link>
+            Not to signed up? Sign up <Link to="/login">here</Link>
           </div>
         </div>
       </form>
