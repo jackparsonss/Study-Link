@@ -1,10 +1,19 @@
 import React from "react";
 import validate from "./validateInfo";
 import "./Form.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "../../firebase";
+import { useDispatch } from "react-redux";
+import { setEmail, setUser, setSchool } from "../../slices/authSlice";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -22,10 +31,34 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validate(values));
+
+    dispatch(setEmail(values.email));
+    dispatch(setSchool(values.school));
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+
+      const user = userCredentials.user;
+      dispatch(setUser(user.uid));
+    } catch (err) {
+      alert(err.message);
+    }
   };
+
+  useEffect(() => {
+    const loggedIn = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        return navigate("/");
+      }
+    });
+    return loggedIn;
+  }, []);
 
   return (
     <div className="form-content-right">
@@ -33,14 +66,14 @@ const SignUp = () => {
         <div className="form-body">
           <h1 className="form-title">Sign Up</h1>
           <div className="form-inputs">
-            <label htmlFor="username" classname="form-label">
+            <label htmlFor="username" className="form-label">
               Username:
             </label>
             <input
               id="username"
               type="text"
               name="username"
-              classname="form-input"
+              className="form-input"
               placeholder="Enter your username"
               value={values.username}
               onChange={handleChange}
@@ -49,14 +82,14 @@ const SignUp = () => {
           </div>
 
           <div className="form-inputs">
-            <label htmlFor="email" classname="form-label">
+            <label htmlFor="email" className="form-label">
               Email:
             </label>
             <input
               id="email"
               type="email"
               name="email"
-              classname="form-input"
+              className="form-input"
               placeholder="Enter your email"
               value={values.email}
               onChange={handleChange}
@@ -65,14 +98,14 @@ const SignUp = () => {
           </div>
 
           <div className="form-inputs">
-            <label htmlFor="password" classname="form-label">
+            <label htmlFor="password" className="form-label">
               Password:
             </label>
             <input
               id="password"
               type="password"
               name="password"
-              classname="form-input"
+              className="form-input"
               placeholder="Enter your password"
               value={values.password}
               onChange={handleChange}
@@ -81,14 +114,14 @@ const SignUp = () => {
           </div>
 
           <div className="form-inputs">
-            <label htmlFor="password2" classname="form-label">
+            <label htmlFor="password2" className="form-label">
               Confirm Password:
             </label>
             <input
               id="password2"
               type="password"
               name="password2"
-              classname="form-input"
+              className="form-input"
               placeholder="Enter your password2"
               value={values.password2}
               onChange={handleChange}
@@ -96,16 +129,16 @@ const SignUp = () => {
             {errors.password2 && <p>{errors.password2}</p>}
           </div>
           <div className="form-inputs">
-            <label htmlFor="school" classname="form-label">
+            <label htmlFor="school" className="form-label">
               School:
             </label>
             <input
               id="school"
               type="school"
               name="school"
-              classname="form-input"
+              className="form-input"
               placeholder="Enter your school"
-              value={values.password2}
+              value={values.school}
               onChange={handleChange}
             />
           </div>
