@@ -15,11 +15,12 @@
   padding: 30px;
   width: 100%;
 }
-p {
+
+.navText {
   color: white;
 }
 
-p:hover {
+.navText:hover {
   border-bottom: 3px solid #5e7af2;
   color: #5e7af2;
 }

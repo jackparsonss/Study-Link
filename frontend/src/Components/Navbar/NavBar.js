@@ -16,22 +16,22 @@ function NavBar() {
     <div className="nav">
       <div className="NavItem Home">
         <FaHome className="NavIcon" />
-        <p>Study Link</p>
+        <p className="navText">Study Link</p>
       </div>
 
       <div className="NavItem">
         <GiNotebook className="NavIcon" />
-        <p>Classes</p>
+        <p className="navText">Classes</p>
       </div>
 
       <div className="NavItem">
         <HiChat className="NavIcon" />
-        <p>Chat</p>
+        <p className="navText">Chat</p>
       </div>
 
       <div className="NavItem" onClick={handleLogout}>
         <FiSettings className="NavIcon" />
-        <p>Settings</p>
+        <p className="navText">Settings</p>
       </div>
 
       {/* <ul class="nav__links">

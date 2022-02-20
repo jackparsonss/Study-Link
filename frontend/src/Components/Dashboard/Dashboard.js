@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <SimilarPeople />
-      <TimeToStudy timeToStudy={4} />
+      <TimeToStudy timeLeft={4} />
       <Upcoming />
     </div>
   );

@@ -122,7 +122,7 @@ const SignUp = () => {
               type="password"
               name="password2"
               className="form-input"
-              placeholder="Enter your password2"
+              placeholder="Re-enter your password"
               value={values.password2}
               onChange={handleChange}
             />
