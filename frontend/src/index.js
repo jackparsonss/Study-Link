@@ -4,16 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FormSignUp from "./Components/Login/FormSignUp";
-
-
+import SignUp from "./Components/Login/SignUp";
+import Login from "./Components/Login/Login";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="login" element={<FormSignUp />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="login" element={<Login />} />
         <Route
           path="*"
           element={
